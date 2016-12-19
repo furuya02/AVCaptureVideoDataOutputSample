@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AVCaptureVideoDataOutputSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NcT-AK-NVE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="467"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QPK-aR-1gf">
+                                <rect key="frame" x="0.0" y="467" width="375" height="200"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iE6-Cm-AWT">
+                                        <rect key="frame" x="138" y="18" width="99" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="buttonSnap"/>
+                                        <connections>
+                                            <action selector="touchDownButton:" destination="BYZ-38-t0r" eventType="touchDown" id="gY0-VV-Nt2"/>
+                                            <action selector="touchUpButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cmV-a9-SoN"/>
+                                        </connections>
+                                    </button>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u4I-La-ai3">
+                                        <rect key="frame" x="0.0" y="80" width="375" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="UaV-Uk-sVE"/>
+                                        </constraints>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="u4I-La-ai3" secondAttribute="trailing" id="46R-42-Ow9"/>
+                                    <constraint firstAttribute="bottom" secondItem="u4I-La-ai3" secondAttribute="bottom" id="DhI-tB-XsD"/>
+                                    <constraint firstItem="u4I-La-ai3" firstAttribute="leading" secondItem="QPK-aR-1gf" secondAttribute="leading" id="Kzz-mw-5gR"/>
+                                    <constraint firstAttribute="height" constant="200" id="iWY-GG-qFI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="QPK-aR-1gf" firstAttribute="top" secondItem="NcT-AK-NVE" secondAttribute="bottom" id="9dw-8a-pga"/>
+                            <constraint firstItem="NcT-AK-NVE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="BZd-eI-xhv"/>
+                            <constraint firstItem="NcT-AK-NVE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="GYv-PD-iUu"/>
+                            <constraint firstAttribute="trailing" secondItem="QPK-aR-1gf" secondAttribute="trailing" id="KoI-K2-QB8"/>
+                            <constraint firstAttribute="trailing" secondItem="NcT-AK-NVE" secondAttribute="trailing" id="VKf-ME-bs5"/>
+                            <constraint firstAttribute="bottom" secondItem="QPK-aR-1gf" secondAttribute="bottom" id="WW0-41-f6d"/>
+                            <constraint firstItem="QPK-aR-1gf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qLl-9Y-UrE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="previewView" destination="NcT-AK-NVE" id="Lze-SG-GI1"/>
+                        <outlet property="scrollView" destination="u4I-La-ai3" id="jl4-Jc-hrP"/>
+                        <outlet property="snapButton" destination="iE6-Cm-AWT" id="Imd-it-WKY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="buttonSnap" width="45" height="45"/>
+    </resources>
+</document>
