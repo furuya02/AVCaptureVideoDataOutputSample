@@ -44,13 +44,15 @@ class ViewController: UIViewController ,AVCaptureVideoDataOutputSampleBufferDele
         // 出力（ビデオデータ）
         videoDataOutput = AVCaptureVideoDataOutput()
         
-        // ピクセルフォーマットを 32bit BGR + A とする
+        // ピクセルフォーマット(32bit BGRA)
         videoDataOutput?.videoSettings = [kCVPixelBufferPixelFormatTypeKey as AnyHashable : Int(kCVPixelFormatType_32BGRA)]
-        // フレームをキャプチャするためのサブスレッド用のシリアルキューを用意
-        videoDataOutput?.setSampleBufferDelegate(self, queue: DispatchQueue.main)
+        // キューのブロック中に新しいフレームが来たら削除する
         videoDataOutput?.alwaysDiscardsLateVideoFrames = true
+        // フレームをキャプチャするためのキューを指定
+        videoDataOutput?.setSampleBufferDelegate(self, queue: DispatchQueue.main)
+
         captureSession.addOutput(videoDataOutput)
-        
+        // クオリティ(1920x1080ピクセル)
         captureSession.sessionPreset = AVCaptureSessionPreset1920x1080
 
         // プレビュー
